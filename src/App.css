@@ -1,0 +1,12 @@
+:root {
+  --size: 100px;
+  --jugador1: #3483E0;
+  --jugador2: #ec0b07;
+  --gap: 10px;
+}
+
+
+.App {
+  display: grid;
+  place-content: center;
+}

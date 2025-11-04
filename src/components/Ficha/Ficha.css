@@ -1,0 +1,27 @@
+.ficha {
+    width: var(--size);
+    height: var(--size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    border-radius: calc(var(--size) * 0.15);
+    background-color: #fff;
+    box-sizing: border-box;
+    transition: transform 0.18s ease-in-out;
+}
+
+.ficha[data-tabdir="inc"] {
+    transform: translateX(calc(var(--size) + var(--gap)));
+}
+.ficha[data-tabdir="dec"] {
+    transform: translateX(calc(-1 * (var(--size) + var(--gap))));
+}
+
+.jugador1 {
+    background-color: var(--jugador1);
+}
+.jugador2 {
+    background-color: var(--jugador2);
+}

@@ -1,17 +1,21 @@
 import './Board.css';
-const Board = () => {
-    const squares =  new Array(6).fill().map(_ => new Array(7).fill(''));
+import Ficha from '../Ficha/Ficha.jsx';
+
+const Board = ({ board = [], fallingFichas = [] }) => {
+    const ROWS = 6;
+    const COLS = 7;
 
     return (
-        <div className="board">
-            {
-                squares.map((row, rowIndex) => (
-                    row.map((_,j)  => {
-                        return <div key={`${rowIndex}-${j}`} className="square"></div>;
-                    })
+        <div className="board" style={{ position: 'relative' }}>
+            {board.map((row, rowIndex) =>
+                row.map((cell, colIndex) => (
+                    <div key={`${rowIndex}-${colIndex}`} className="square">
+                        {cell && <Ficha key={`${rowIndex}-${colIndex}-ficha`} jugador={cell} />}
+                    </div>
                 ))
-            }
+            )}
         </div>
-    )
-}
+    );
+};
+
 export default Board;
